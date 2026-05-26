@@ -1,0 +1,20 @@
+categories:
+  FontAwesome:
+    label: 'Refresj Font Awesome'
+  FontAwesome.css:
+    label: 'CSS'
+    parent: FontAwesome
+
+settings:
+  plugin.tx_rfrsjfontawesome.settings.loadCSS:
+    label: 'Load CSS in frontend'
+    description: 'Include all CSS files below in frontend. Note: the icons in CKEditor are based on Font Awesome 7.2.0 Pro Plus.'
+    category: FontAwesome.css
+    type: bool
+    default: '1'
+  plugin.tx_rfrsjfontawesome.settings.cssFiles:
+    label: 'CSS Files'
+    description: 'A list of the Font Awesome CSS files to include in both frontend and CKEditor backend'
+    category: FontAwesome.css
+    type: stringlist
+    default: ['/path/to/css/fontawesome.min.css', '/path/to/css/brands.min.css', '/path/to/css/thin.min.css', '/path/to/css/light.min.css', '/path/to/css/regular.min.css', '/path/to/css/solid.min.css', '/path/to/css/sharp-thin.min.css', '/path/to/css/sharp-light.min.css', '/path/to/css/sharp-regular.min.css', '/path/to/css/sharp-solid.min.css', '/path/to/css/duotone-thin.min.css', '/path/to/css/duotone-light.min.css', '/path/to/css/duotone-regular.min.css', '/path/to/css/duotone.min.css', '/path/to/css/sharp-duotone-thin.min.css', '/path/to/css/sharp-duotone-light.min.css', '/path/to/css/sharp-duotone-regular.min.css', '/path/to/css/sharp-duotone-solid.min.css']

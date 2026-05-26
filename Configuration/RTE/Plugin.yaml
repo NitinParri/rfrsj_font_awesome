@@ -1,0 +1,29 @@
+editor:
+  config:
+    importModules:
+      - { module: '@refresj/rfrsj-font-awesome', exports: ['RfrsjFontAwesome'] }
+
+    toolbar:
+      items:
+        - '|'
+        - RfrsjFontAwesome
+
+    htmlSupport:
+      allowEmpty:
+        - 'i'
+        - 'span'
+        - 'em'
+
+      allow:
+        - name: 'i'
+          attributes: true
+          classes: true
+          styles: true
+        - name: 'span'
+          attributes: true
+          classes: true
+          styles: true
+        - name: 'em'
+          attributes: true
+          classes: true
+          styles: true

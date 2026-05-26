@@ -1,0 +1,3 @@
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Full.yaml" }
+    - { resource: "EXT:rfrsj_font_awesome/Configuration/RTE/Plugin.yaml" }

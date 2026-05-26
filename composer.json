@@ -1,0 +1,32 @@
+{
+    "name": "refresj/rfrsj-font-awesome",
+    "type": "typo3-cms-extension",
+    "description": "Font Awesome for CKEditor - Module for CKEditor to insert Font Awesome Pro+ icons!",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": "^8.5",
+        "typo3/cms-core": "^14.3"
+    },
+    "authors": [
+        {
+            "name": "Nitin Parri",
+            "role": "Developer",
+            "email": "nitin@refresj.nl",
+            "homepage": "https://refresj.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Refresj\\RfrsjFontAwesome\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "rfrsj_font_awesome",
+            "version": "14.3.0",
+            "Package": {
+                "providesPackages": {}
+            }
+        }
+    }
+}

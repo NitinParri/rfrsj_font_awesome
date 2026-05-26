@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Font Awesome icons for CKEditor</title>
+    <link href="./bootstrap.css" media="all" nonce="" rel="stylesheet">
+    <link href="./modal.css" media="all" nonce="" rel="stylesheet">
+</head>
+<body>
+    <div class="p-4">
+        <div class="row g-2 mb-1">
+            <div class="col-12">
+                <div class="d-flex flex-wrap gap-1 justify-content-center w-100" id="faCatGrp">
+                    <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="brands">Brands</button>
+                    <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="classic">Classic</button>
+                    <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="sharp">Sharp</button>
+                    <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="duotone">Duotone</button>
+                    <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="sharpduotone">Sharp Duotone</button>
+                </div>
+            </div>
+        </div>
+        <div class="row g-2 mb-2">
+            <div class="col-12">
+                <div class="d-flex flex-wrap gap-1 justify-content-center w-100" id="faWtGrp">
+                    <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-thin">Thin</button>
+                    <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-light">Light</button>
+                    <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-regular">Regular</button>
+                    <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-solid">Solid</button>
+                </div>
+            </div>
+        </div>
+        <div class="row g-2 mb-3 mt-3">
+            <div class="input-group m-0 col-12 col-md d-flex">
+                <span class="input-group-text small" id="search-label">Search:</span>
+                <input class="form-control" name="search" aria-label="Search" aria-describedby="search-label" />
+            </div>
+        </div>
+        <div class="row mt-2 g-2 align-items-center">
+            <div class="form-group m-0 col-4 col-md-2">
+                <span class="small">Set options:<br /><sup>(before selecting icon)</sup></span>
+            </div>
+            <div class="form-group m-0 col-4 col-md-2">
+                <select class="form-select form-select-sm" id="faSize" name="faSize">
+                    <option value="">Size...</option>
+                    <option value="fa-2xs">2xs (0.625em)</option>
+                    <option value="fa-xs">xs (0.75em)</option>
+                    <option value="fa-sm">sm (0.875em)</option>
+                    <option value="fa-lg">lg (1.25em)</option>
+                    <option value="fa-xl">xl (1.5em)</option>
+                    <option value="fa-2x">2x (2em)</option>
+                    <option value="fa-3x">3x (3em)</option>
+                    <option value="fa-4x">4x (4em)</option>
+                    <option value="fa-5x">5x (5em)</option>
+                    <option value="fa-6x">6x (6em)</option>
+                    <option value="fa-7x">7x (7em)</option>
+                    <option value="fa-8x">8x (8em)</option>
+                    <option value="fa-9x">9x (9em)</option>
+                    <option value="fa-10x">10x (10em)</option>
+                </select>
+            </div>
+            <div class="form-group m-0 col-4 col-md-2">
+                <select class="form-select form-select-sm" id="faAnimate" name="faAnimate">
+                    <option value="">Animate...</option>
+                    <option value="fa-beat">Beat</option>
+                    <option value="fa-fade">Fade</option>
+                    <option value="fa-beat-fade">Beat Fade</option>
+                    <option value="fa-bounce">Bounce</option>
+                    <option value="fa-flip">Flip</option>
+                    <option value="fa-shake">Shake</option>
+                    <option value="fa-spin">Spin</option>
+                </select>
+            </div>
+            <div class="form-group m-0 col-4 col-md-2">
+                <select class="form-select form-select-sm" id="faRotate" name="faRotate">
+                    <option value="">Rotate...</option>
+                    <option value="fa-rotate-90">90°</option>
+                    <option value="fa-rotate-180">180°</option>
+                    <option value="fa-rotate-270">270°</option>
+                    <option value="fa-flip-horizontal">Flip horizontal</option>
+                    <option value="fa-flip-vertical">Flip vertical</option>
+                    <option value="fa-flip-both">Flip both</option>
+                </select>
+            </div>
+            <div class="form-group m-0 col-4 col-md-2">
+                <select class="form-select form-select-sm" id="faPull" name="faPull">
+                    <option value="">Pull...</option>
+                    <option value="fa-pull-start">Start</option>
+                    <option value="fa-pull-end">End</option>
+                </select>
+            </div>
+            <div class="form-group m-0 col-4 col-md-2 d-flex align-items-center">
+                <div class="form-check form-switch m-0">
+                    <input class="form-check-input" type="checkbox" id="faWidthAuto" name="faWidthAuto" style="cursor: pointer;" />
+                    <label class="form-check-label small" for="faWidthAuto" style="cursor: pointer;">Auto width</label>
+                </div>
+            </div>
+        </div>
+        <div class="pt-4">
+            <div class="row g-4 row-cols-4 row-cols-sm-8" id="faIcons"></div>
+        </div>
+    </div>
+
+    <script src="./modal.js"></script>
+</body>
+</html>
