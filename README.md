@@ -87,7 +87,14 @@ The extension extends the three default TYPO3 RTE presets which can be used in y
 To use a preset in page TSconfig:
 
 ```typoscript
+# Default for all RTE textareas:
 RTE.default.preset = full
+
+# Specific RTE textareas such as ext:powermail:
+RTE.config.tt_content {
+    settings\.flexform\.sender\.body.preset < RTE.default.preset
+    settings\.flexform\.receiver\.body.preset < RTE.default.preset
+}
 ```
 
 To use a preset in your TCA:
