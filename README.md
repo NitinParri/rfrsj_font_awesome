@@ -5,11 +5,11 @@ TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 ri
 ## Features
 
 - Browse and insert Font Awesome icons via a modal dialog in CKEditor 5
-- Supports Font Awesome 7.2 Pro+ icon packs and all styles: Classic, Sharp, Duotone, Sharp Duotone and Brands
-- Filter icons by icon pack and style or search with keyword 
-- Add extra options: Size, Animation, Rotation, Pull and/or Auto width
-- CSS files configured once via Site Settings - automatically applied to CKEditor (and optional to the frontend)
-- **Font Awesome is not included!** You have to include it yourself with the paths set in Site Settings.
+- Supports Font Awesome 7.2 Pro+ icon packs with all styles: Classic, Sharp, Duotone, Sharp Duotone and Brands
+- Filter icons by icon pack and style or search icons by name
+- Set extra options: Size, Animation, Rotation, Pull and/or Auto width
+- CSS files can be configured once via Site Settings and are automatically applied to CKEditor (and optionally to the frontend)
+- **Font Awesome is not included!** You have to purchase a license and upload the required files so you can include the CSS files by setting the correct paths in Site Settings.
 
 ## Requirements
 
@@ -17,7 +17,6 @@ TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 ri
 |---|---|
 | PHP | ^8.5 |
 | TYPO3 CMS | ^14.3 |
-| Font Awesome Pro | 7.2.x |
 
 ## Installation
 
@@ -27,16 +26,24 @@ Install the extension
 
 ### 1. Add the Site Set
 
-Add `refresj/refresj-font-awesome` to your site's sets:
+Add set via ***Sites → Setup → Pencil icon button (bottom right of your site)*** and under `Sets for this Site` add the site set `Font Awesome for CKEditor [refresj/refresj-font-awesome]`.
+
+Or add `refresj/refresj-font-awesome` to your site's or your Site Set's config.yaml:
 
 ```yaml
 sets:
   - refresj/refresj-font-awesome
 ```
 
-### 2. Configure CSS files
+### 2. Upload Font Awesome files
 
-After adding the Site Set, configure the Font Awesome CSS files via **Admin Tools → Sites → [your site] → Settings**:
+1. Download [Font Awesome Pro+ for web](https://fontawesome.com/releases/7.2.0/pro-plus/web/download) (license required)
+2. Create a new folder `FontAwesome` in ***Media → fileadmin/***
+3. Upload the downloaded `css` and `webfonts` folders to the newly created folder
+
+### 3. Configure CSS files
+
+After adding the Site Set, configure the Font Awesome CSS files via ***Sites → Setup → Gear icon button (bottom right of your site)***:
 
 | Setting | Description |
 |---|---|
@@ -47,27 +54,27 @@ Both `EXT:` paths and absolute paths (e.g. `/fileadmin/...`) are supported:
 
 ```yaml
 plugin.tx_rfrsjfontawesome.settings.cssFiles:
-  - 'EXT:your_extension/Resources/Public/Css/Icons/all.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/brands.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/thin.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/light.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/regular.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/solid.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/sharp-thin.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/sharp-light.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/sharp-regular.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/sharp-solid.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/duotone-thin.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/duotone-light.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/duotone-regular.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/duotone.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/sharp-duotone-thin.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/sharp-duotone-light.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/sharp-duotone-regular.css'
-  - 'EXT:your_extension/Resources/Public/Css/Icons/sharp-duotone-solid.css'
+  - '/fileadmin/FontAwesome/css/fontawesome.min.css'
+  - '/fileadmin/FontAwesome/css/brands.min.css'
+  - '/fileadmin/FontAwesome/css/thin.min.css'
+  - '/fileadmin/FontAwesome/css/light.min.css'
+  - '/fileadmin/FontAwesome/css/regular.min.css'
+  - '/fileadmin/FontAwesome/css/solid.min.css'
+  - '/fileadmin/FontAwesome/css/sharp-thin.min.css'
+  - '/fileadmin/FontAwesome/css/sharp-light.min.css'
+  - '/fileadmin/FontAwesome/css/sharp-regular.min.css'
+  - '/fileadmin/FontAwesome/css/sharp-solid.min.css'
+  - '/fileadmin/FontAwesome/css/duotone-thin.min.css'
+  - '/fileadmin/FontAwesome/css/duotone-light.min.css'
+  - '/fileadmin/FontAwesome/css/duotone-regular.min.css'
+  - '/fileadmin/FontAwesome/css/duotone.min.css'
+  - '/fileadmin/FontAwesome/css/sharp-duotone-thin.min.css'
+  - '/fileadmin/FontAwesome/css/sharp-duotone-light.min.css'
+  - '/fileadmin/FontAwesome/css/sharp-duotone-regular.min.css'
+  - '/fileadmin/FontAwesome/css/sharp-duotone-solid.min.css'
 ```
 
-### 3. RTE configuration
+### 4. RTE configuration
 
 The extension extends the three default TYPO3 RTE presets which can be used in your TCA or page TSconfig:
 
@@ -77,13 +84,19 @@ The extension extends the three default TYPO3 RTE presets which can be used in y
 | `full` | Full editor configuration |
 | `minimal` | Minimal editor configuration |
 
+To use a preset in page TSconfig:
+
+```typoscript
+RTE.default.preset = full
+```
+
 To use a preset in your TCA:
 
 ```php
 'config' => [
     'type' => 'text',
     'enableRichtext' => true,
-    'richtextConfiguration' => 'default',
+    'richtextConfiguration' => 'full',
 ],
 ```
 
@@ -91,18 +104,28 @@ To use a preset in your TCA:
 
 ### Icon insertion
 
-Clicking the Font Awesome toolbar button opens a modal dialog. The dialog allows you to:
+Clicking the Font Awesome toolbar button (green flag icon) opens a modal dialog. The dialog allows you to:
 
 - Select an icon pack: Brands, Classic, Sharp, Duotone, Sharp Duotone
 - Select a style: Thin, Light, Regular, Solid
 - Search icons by name
-- Add Size, Animation, Rotation or toggle Auto width
+- Set extra options Size, Animation, Rotation, Pull and/or toggle Auto width
 
 Clicking an icon inserts an `<i>` element with the correct Font Awesome classes into the editor.
 
 ## Known Problems
 
-If no icons are showing, you didn't add a correct path to the CSS file in Site Settings.
+### No icons showing
+
+If no icons are showing, you didn't add a correct path to the CSS file(s) in Site Settings.
+
+### Extra options not inserted
+
+You have to select them **before** you click on an icon.
+
+### License lower than Pro+
+
+If you have a Font Awesome license lower than Pro+, the extension will still work. Icons not included in your license tier will simply not be available.
 
 ## License
 
@@ -110,4 +133,4 @@ This extension is released under the [GNU General Public License v2.0 or later](
 
 ## Author
 
-Nitin Parri — [refresj.nl](https://refresj.nl)
+Nitin Parri - [Refresj](https://refresj.nl)
