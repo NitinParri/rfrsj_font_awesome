@@ -12,7 +12,8 @@ editor:
       allowEmpty:
         - 'i'
         - 'span'
-        - 'em'
+        - 'ul'
+        - 'li'
 
       allow:
         - name: 'i'
@@ -23,7 +24,12 @@ editor:
           attributes: true
           classes: true
           styles: true
-        - name: 'em'
+        - name: 'ul'
           attributes: true
           classes: true
           styles: true
+          
+    style:
+      definitions:
+        - { name: 'Font Awesome (Ordered list)', element: 'ul', classes: ['fa-ul'] }
+        - { name: 'Font Awesome (Unordered list)', element: 'ol', classes: ['fa-ul'] }

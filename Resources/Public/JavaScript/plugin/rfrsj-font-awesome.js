@@ -79,14 +79,13 @@ export class RfrsjFontAwesome extends Plugin {
         });
     }
 
-    insertIcon(iconClass) {
-        const classes = Array.isArray(iconClass) ? iconClass.join(' ') : iconClass;
-        if (!classes?.trim()) return;
-
-        const content = `<i class="${classes}">&nbsp;</i> `;
+    insertIcon(data) {
+        const classes = Array.isArray(data?.classes) ? data.classes.join(' ') : (data ?? '');
+        if (!String(classes).trim()) return;
+        const iTag = '<i class="' + classes + '">&nbsp;</i>';
+        const content = data.faList ? '<span class="fa-li">' + iTag + '</span> ' : iTag + ' ';
         const viewFragment = this.editor.data.processor.toView(content);
         const modelFragment = this.editor.data.toModel(viewFragment);
-
         this.editor.model.change(() => {
             this.editor.model.insertContent(
                 modelFragment,

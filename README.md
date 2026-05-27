@@ -3,7 +3,7 @@
 [![Donate](https://img.shields.io/badge/PayPal-Donate-green?style=for-the-badge&logo=paypal&logoColor=002991&labelColor=dddddd)](https://paypal.me/NitinParri)
 [![TYPO3](https://img.shields.io/badge/TYPO3-rfrsj__font__awesome-FF8600?style=for-the-badge&logo=typo3&logoColor=FF8600&labelColor=dddddd)](https://extensions.typo3.org/extension/rfrsj_font_awesome)
 [![Repo](https://img.shields.io/badge/Github-repo-blue?style=for-the-badge&logo=github&logoColor=181717&labelColor=dddddd)](https://github.com/NitinParri/rfrsj_font_awesome)
-[![Latest Stable version](https://img.shields.io/packagist/v/refresj/rfrsj-font-awesome?style=for-the-badge&logo=packagist&181717=F28D1A&labelColor=dddddd)](https://packagist.org/packages/refresj/rfrsj-font-awesome)
+[![Latest Stable version](https://img.shields.io/packagist/v/refresj/rfrsj-font-awesome?style=for-the-badge&logo=packagist&logoColor=181717&labelColor=dddddd)](https://packagist.org/packages/refresj/rfrsj-font-awesome)
 
 TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 rich text editor. Provides a toolbar button to browse and insert Font Awesome icons directly into content with extra options. *Inspired by the TYPO3 extension rte_ckeditor_fontawesome.*
 
@@ -118,12 +118,21 @@ To use a preset in your TCA:
 
 Clicking the Font Awesome toolbar button (green flag icon) opens a modal dialog. The dialog allows you to:
 
-- Select an icon pack: Brands, Classic, Sharp, Duotone, Sharp Duotone
-- Select a style: Thin, Light, Regular, Solid
-- Search icons by name
-- Set extra options Size, Animation, Rotation, Pull and/or toggle Auto width
+1. Select an icon pack: Brands, Classic, Sharp, Duotone, Sharp Duotone
+2. Select a style: Thin, Light, Regular, Solid
+3. Search icons by name
+4. Set extra options Size, Animation, Rotation, Pull, Auto width and/or List item
 
 Clicking an icon inserts an `<i>` element with the correct Font Awesome classes into the editor.
+
+### Icons in a list
+
+You can also make a list and replace the default bullets or numbers with icons:
+
+1. Make unordered or ordered list as usual
+2. Make sure your cursor is in the list
+3. Select block style `Font Awesome (Unordered list)` or `Font Awesome (Ordered list)` under Styles in RTE
+4. Insert icon with option `List item` for each list item
 
 ## Known Problems
 

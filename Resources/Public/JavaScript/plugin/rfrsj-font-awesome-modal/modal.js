@@ -117,13 +117,14 @@ const iconGroups = { faIcons, faBrands };
         const faRotate    = document.querySelector('[name="faRotate"]').value  || null;
         const faPull      = document.querySelector('[name="faPull"]').value    || null;
         const faWidthAuto = document.querySelector('[name="faWidthAuto"]').checked;
+        const faList      = document.querySelector('[name="faList"]').checked;
         if (faSize)      selectedClass.push(faSize);
         if (faAnimate)   selectedClass.push(faAnimate);
         if (faRotate)    selectedClass.push(faRotate);
         if (faPull)      selectedClass.push(faPull);
         if (faWidthAuto) selectedClass.push('fa-width-auto');
         const bc = new BroadcastChannel('fontawesome:selected');
-        bc.postMessage(selectedClass);
+        bc.postMessage({ classes: selectedClass, faList });
         bc.close();
     }
 
