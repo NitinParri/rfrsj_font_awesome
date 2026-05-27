@@ -1,4 +1,8 @@
 # Font Awesome for CKEditor
+[![Donate](https://img.shields.io/badge/PayPal-Donate-green?style=for-the-badge&logo=paypal)](https://paypal.me/NitinParri)
+[![TYPO3](https://img.shields.io/badge/TYPO3-rfrsj__font__awesome-FF8600?style=for-the-badge&logo=typo3&logoColor=FF8600)](https://extensions.typo3.org/extension/rfrsj_font_awesome)
+[![Repo](https://img.shields.io/badge/Github-repo-blue?style=for-the-badge&logo=github)](https://github.com/NitinParri/rfrsj_font_awesome)
+[![Latest Stable version](https://img.shields.io/packagist/v/NitinParri/rfrsj-font-awesome?style=for-the-badge)](https://packagist.org/packages/refresj/rfrsj-font-awesome)
 
 TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 rich text editor. Provides a toolbar button to browse and insert Font Awesome icons directly into content with extra options. *Inspired by the extension rte_ckeditor_fontawesome.*
 
