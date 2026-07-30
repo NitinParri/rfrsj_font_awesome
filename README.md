@@ -14,6 +14,7 @@ TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 ri
 - Filter icons by icon pack and style or search icons by name
 - Set extra options: Size, Animation, Rotation, Pull and/or Auto width
 - CSS files can be configured once via Site Settings and are automatically applied to CKEditor (and optionally to the frontend)
+- Optionally register Font Awesome icons as TYPO3 Icon API identifiers, based on your own SVG sprite files
 - **Font Awesome is not included!** You have to purchase a license and upload the required files so you can include the CSS files by setting the correct paths in Site Settings.
 
 ## Requirements
@@ -110,6 +111,49 @@ To use a preset in your TCA:
     'enableRichtext' => true,
     'richtextConfiguration' => 'full',
 ],
+```
+
+### 5. Icon API registration (optional)
+
+If you also want to use Font Awesome icons in the TYPO3 backend itself, for example with `<core:icon>` or `IconFactory`, you can register them as regular TYPO3 Icon API identifiers, based on Font Awesome's SVG sprite files.
+
+Enable and configure this via **_Sites → Setup → Gear icon button (bottom right of your site)_**:
+
+| Setting                                                   | Description                                               |
+| --------------------------------------------------------- | --------------------------------------------------------- |
+| `plugin.tx_rfrsjfontawesome.settings.useIconRegistration` | Enable or disable registering icons in the TYPO3 Icon API |
+| `plugin.tx_rfrsjfontawesome.settings.spriteFiles`         | List of Font Awesome SVG sprite file paths to register    |
+
+This setting is **disabled by default**, since it can register tens of thousands of icon identifiers depending on how many sprite files are configured.
+
+```yaml
+plugin.tx_rfrsjfontawesome.settings.useIconRegistration: 1
+plugin.tx_rfrsjfontawesome.settings.spriteFiles:
+    - "/fileadmin/FontAwesome/sprites/solid.svg"
+    - "/fileadmin/FontAwesome/sprites/regular.svg"
+    - "/fileadmin/FontAwesome/sprites/light.svg"
+    - "/fileadmin/FontAwesome/sprites/thin.svg"
+    - "/fileadmin/FontAwesome/sprites/duotone.svg"
+    - "/fileadmin/FontAwesome/sprites/duotone-regular.svg"
+    - "/fileadmin/FontAwesome/sprites/duotone-light.svg"
+    - "/fileadmin/FontAwesome/sprites/duotone-thin.svg"
+    - "/fileadmin/FontAwesome/sprites/sharp-solid.svg"
+    - "/fileadmin/FontAwesome/sprites/sharp-regular.svg"
+    - "/fileadmin/FontAwesome/sprites/sharp-light.svg"
+    - "/fileadmin/FontAwesome/sprites/sharp-thin.svg"
+    - "/fileadmin/FontAwesome/sprites/sharp-duotone-solid.svg"
+    - "/fileadmin/FontAwesome/sprites/sharp-duotone-regular.svg"
+    - "/fileadmin/FontAwesome/sprites/sharp-duotone-light.svg"
+    - "/fileadmin/FontAwesome/sprites/sharp-duotone-thin.svg"
+    - "/fileadmin/FontAwesome/sprites/brands.svg"
+```
+
+Each sprite file must expose its icons via `<symbol id="...">` elements, which is the standard format used by Font Awesome's own SVG sprite downloads. Every icon is registered as `fa-<style>-<name>`, where `<style>` is derived from the sprite's filename:
+
+```html
+<core:icon identifier="fa-solid-star" />
+<core:icon identifier="fa-sharp-duotone-thin-star" />
+<core:icon identifier="fa-brands-github" />
 ```
 
 ## How it works
