@@ -1,35 +1,35 @@
 editor:
-  config:
-    importModules:
-      - { module: '@refresj/rfrsj-font-awesome', exports: ['RfrsjFontAwesome'] }
+    config:
+        importModules:
+            - {module: "@refresj/rfrsj-font-awesome", exports: ["RfrsjFontAwesome"]}
 
-    toolbar:
-      items:
-        - '|'
-        - RfrsjFontAwesome
+        toolbar:
+            items:
+                - "|"
+                - RfrsjFontAwesome
 
-    htmlSupport:
-      allowEmpty:
-        - 'i'
-        - 'span'
-        - 'ul'
-        - 'li'
+        htmlSupport:
+            allowEmpty:
+                - "i"
+                - "span"
+                - "ul"
+                - "li"
 
-      allow:
-        - name: 'i'
-          attributes: true
-          classes: true
-          styles: true
-        - name: 'span'
-          attributes: true
-          classes: true
-          styles: true
-        - name: 'ul'
-          attributes: true
-          classes: true
-          styles: true
-          
-    style:
-      definitions:
-        - { name: 'Font Awesome (Ordered list)', element: 'ul', classes: ['fa-ul'] }
-        - { name: 'Font Awesome (Unordered list)', element: 'ol', classes: ['fa-ul'] }
+            allow:
+                - name: "i"
+                  attributes: true
+                  classes: true
+                  styles: true
+                - name: "span"
+                  attributes: true
+                  classes: true
+                  styles: true
+                - name: "ul"
+                  attributes: true
+                  classes: true
+                  styles: true
+
+        style:
+            definitions:
+                - {name: "Font Awesome (Ordered list)", element: "ul", classes: ["fa-ul"]}
+                - {name: "Font Awesome (Unordered list)", element: "ol", classes: ["fa-ul"]}

@@ -5,12 +5,12 @@
 [![Repo](https://img.shields.io/badge/Github-repo-blue?style=for-the-badge&logo=github&logoColor=181717&labelColor=dddddd)](https://github.com/NitinParri/rfrsj_font_awesome)
 [![Latest Stable version](https://img.shields.io/packagist/v/refresj/rfrsj-font-awesome?style=for-the-badge&logo=packagist&logoColor=181717&labelColor=dddddd)](https://packagist.org/packages/refresj/rfrsj-font-awesome)
 
-TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 rich text editor. Provides a toolbar button to browse and insert Font Awesome icons directly into content with extra options. *Inspired by the TYPO3 extension rte_ckeditor_fontawesome.*
+TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 rich text editor. Provides a toolbar button to browse and insert Font Awesome icons directly into content with extra options. _Inspired by the TYPO3 extension rte_ckeditor_fontawesome._
 
 ## Features
 
 - Browse and insert Font Awesome icons via a modal dialog in CKEditor 5
-- Supports Font Awesome 7.2 Pro+ icon packs with all styles: Classic, Sharp, Duotone, Sharp Duotone and Brands
+- Supports Font Awesome 7.3.1 Pro+ icon packs with all styles: Classic, Sharp, Duotone, Sharp Duotone and Brands
 - Filter icons by icon pack and style or search icons by name
 - Set extra options: Size, Animation, Rotation, Pull and/or Auto width
 - CSS files can be configured once via Site Settings and are automatically applied to CKEditor (and optionally to the frontend)
@@ -19,9 +19,9 @@ TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 ri
 ## Requirements
 
 | Requirement | Version |
-|---|---|
-| PHP | ^8.5 |
-| TYPO3 CMS | ^14.3 |
+| ----------- | ------- |
+| PHP         | ^8.5    |
+| TYPO3 CMS   | ^14.3   |
 
 ## Installation
 
@@ -31,63 +31,63 @@ Install the extension
 
 ### 1. Add the Site Set
 
-Add set via ***Sites → Setup → Pencil icon button (bottom right of your site)*** and under `Sets for this Site` add the site set `Font Awesome for CKEditor [refresj/refresj-font-awesome]`.
+Add set via **_Sites → Setup → Pencil icon button (bottom right of your site)_** and under `Sets for this Site` add the site set `Font Awesome for CKEditor [refresj/refresj-font-awesome]`.
 
 Or add `refresj/refresj-font-awesome` to your site's or your Site Set's config.yaml:
 
 ```yaml
 sets:
-  - refresj/refresj-font-awesome
+    - refresj/refresj-font-awesome
 ```
 
 ### 2. Upload Font Awesome files
 
 1. Download [Font Awesome Pro+ for web](https://fontawesome.com/releases/7.2.0/pro-plus/web/download) (license required)
-2. Create a new folder `FontAwesome` in ***Media → fileadmin/***
+2. Create a new folder `FontAwesome` in **_Media → fileadmin/_**
 3. Upload the downloaded `css` and `webfonts` folders to the newly created folder
 
 ### 3. Configure CSS files
 
-After adding the Site Set, configure the Font Awesome CSS files via ***Sites → Setup → Gear icon button (bottom right of your site)***:
+After adding the Site Set, configure the Font Awesome CSS files via **_Sites → Setup → Gear icon button (bottom right of your site)_**:
 
-| Setting | Description |
-|---|---|
-| `plugin.tx_rfrsjfontawesome.settings.loadCSS` | Enable or disable frontend CSS inclusion |
+| Setting                                        | Description                                    |
+| ---------------------------------------------- | ---------------------------------------------- |
+| `plugin.tx_rfrsjfontawesome.settings.loadCSS`  | Enable or disable frontend CSS inclusion       |
 | `plugin.tx_rfrsjfontawesome.settings.cssFiles` | List of Font Awesome CSS file paths to include |
 
 Both `EXT:` paths and absolute paths (e.g. `/fileadmin/...`) are supported:
 
 ```yaml
 plugin.tx_rfrsjfontawesome.settings.cssFiles:
-  - '/fileadmin/FontAwesome/css/fontawesome.min.css'
-  - '/fileadmin/FontAwesome/css/brands.min.css'
-  - '/fileadmin/FontAwesome/css/thin.min.css'
-  - '/fileadmin/FontAwesome/css/light.min.css'
-  - '/fileadmin/FontAwesome/css/regular.min.css'
-  - '/fileadmin/FontAwesome/css/solid.min.css'
-  - '/fileadmin/FontAwesome/css/sharp-thin.min.css'
-  - '/fileadmin/FontAwesome/css/sharp-light.min.css'
-  - '/fileadmin/FontAwesome/css/sharp-regular.min.css'
-  - '/fileadmin/FontAwesome/css/sharp-solid.min.css'
-  - '/fileadmin/FontAwesome/css/duotone-thin.min.css'
-  - '/fileadmin/FontAwesome/css/duotone-light.min.css'
-  - '/fileadmin/FontAwesome/css/duotone-regular.min.css'
-  - '/fileadmin/FontAwesome/css/duotone.min.css'
-  - '/fileadmin/FontAwesome/css/sharp-duotone-thin.min.css'
-  - '/fileadmin/FontAwesome/css/sharp-duotone-light.min.css'
-  - '/fileadmin/FontAwesome/css/sharp-duotone-regular.min.css'
-  - '/fileadmin/FontAwesome/css/sharp-duotone-solid.min.css'
+    - "/fileadmin/FontAwesome/css/fontawesome.min.css"
+    - "/fileadmin/FontAwesome/css/brands.min.css"
+    - "/fileadmin/FontAwesome/css/thin.min.css"
+    - "/fileadmin/FontAwesome/css/light.min.css"
+    - "/fileadmin/FontAwesome/css/regular.min.css"
+    - "/fileadmin/FontAwesome/css/solid.min.css"
+    - "/fileadmin/FontAwesome/css/sharp-thin.min.css"
+    - "/fileadmin/FontAwesome/css/sharp-light.min.css"
+    - "/fileadmin/FontAwesome/css/sharp-regular.min.css"
+    - "/fileadmin/FontAwesome/css/sharp-solid.min.css"
+    - "/fileadmin/FontAwesome/css/duotone-thin.min.css"
+    - "/fileadmin/FontAwesome/css/duotone-light.min.css"
+    - "/fileadmin/FontAwesome/css/duotone-regular.min.css"
+    - "/fileadmin/FontAwesome/css/duotone.min.css"
+    - "/fileadmin/FontAwesome/css/sharp-duotone-thin.min.css"
+    - "/fileadmin/FontAwesome/css/sharp-duotone-light.min.css"
+    - "/fileadmin/FontAwesome/css/sharp-duotone-regular.min.css"
+    - "/fileadmin/FontAwesome/css/sharp-duotone-solid.min.css"
 ```
 
 ### 4. RTE configuration
 
 The extension extends the three default TYPO3 RTE presets which can be used in your TCA or page TSconfig:
 
-| Preset | Description |
-|---|---|
+| Preset    | Description                   |
+| --------- | ----------------------------- |
 | `default` | Standard editor configuration |
-| `full` | Full editor configuration |
-| `minimal` | Minimal editor configuration |
+| `full`    | Full editor configuration     |
+| `minimal` | Minimal editor configuration  |
 
 To use a preset in page TSconfig:
 

@@ -1,13 +1,13 @@
 services:
-  _defaults:
-    autowire: true
-    autoconfigure: true
-    public: false
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
 
-  Refresj\RfrsjFontAwesome\:
-    resource: '../Classes/*'
+    Refresj\RfrsjFontAwesome\:
+        resource: "../Classes/*"
 
-  Refresj\RfrsjFontAwesome\Middleware\AddFontAwesomeCss:
-    public: true
-    tags:
-      - name: middlewares
+    Refresj\RfrsjFontAwesome\Middleware\AddFontAwesomeCss:
+        public: true
+        tags:
+            - name: middlewares

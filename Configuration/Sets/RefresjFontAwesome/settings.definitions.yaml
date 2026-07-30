@@ -1,20 +1,20 @@
 categories:
-  FontAwesome:
-    label: 'Refresj Font Awesome'
-  FontAwesome.css:
-    label: 'CSS'
-    parent: FontAwesome
+    FontAwesome:
+        label: "Refresj Font Awesome"
+    FontAwesome.css:
+        label: "CSS"
+        parent: FontAwesome
 
 settings:
-  plugin.tx_rfrsjfontawesome.settings.loadCSS:
-    label: 'Load CSS in frontend'
-    description: 'Include all CSS files below in frontend. Note: the icons in CKEditor are based on Font Awesome 7.2.0 Pro Plus.'
-    category: FontAwesome.css
-    type: bool
-    default: '1'
-  plugin.tx_rfrsjfontawesome.settings.cssFiles:
-    label: 'CSS Files'
-    description: 'A list of the Font Awesome CSS files to include in both frontend and CKEditor backend'
-    category: FontAwesome.css
-    type: stringlist
-    default: ['/fileadmin/FontAwesome/css/fontawesome.min.css', '/fileadmin/FontAwesome/css/brands.min.css', '/fileadmin/FontAwesome/css/thin.min.css', '/fileadmin/FontAwesome/css/light.min.css', '/fileadmin/FontAwesome/css/regular.min.css', '/fileadmin/FontAwesome/css/solid.min.css', '/fileadmin/FontAwesome/css/sharp-thin.min.css', '/fileadmin/FontAwesome/css/sharp-light.min.css', '/fileadmin/FontAwesome/css/sharp-regular.min.css', '/fileadmin/FontAwesome/css/sharp-solid.min.css', '/fileadmin/FontAwesome/css/duotone-thin.min.css', '/fileadmin/FontAwesome/css/duotone-light.min.css', '/fileadmin/FontAwesome/css/duotone-regular.min.css', '/fileadmin/FontAwesome/css/duotone.min.css', '/fileadmin/FontAwesome/css/sharp-duotone-thin.min.css', '/fileadmin/FontAwesome/css/sharp-duotone-light.min.css', '/fileadmin/FontAwesome/css/sharp-duotone-regular.min.css', '/fileadmin/FontAwesome/css/sharp-duotone-solid.min.css']
+    plugin.tx_rfrsjfontawesome.settings.loadCSS:
+        label: "Load CSS in frontend"
+        description: "Include all CSS files below in frontend. Note: the icons in CKEditor are based on Font Awesome 7.2.0 Pro Plus."
+        category: FontAwesome.css
+        type: bool
+        default: "1"
+    plugin.tx_rfrsjfontawesome.settings.cssFiles:
+        label: "CSS Files"
+        description: "A list of the Font Awesome CSS files to include in both frontend and CKEditor backend"
+        category: FontAwesome.css
+        type: stringlist
+        default: ["/fileadmin/FontAwesome/css/fontawesome.min.css", "/fileadmin/FontAwesome/css/brands.min.css", "/fileadmin/FontAwesome/css/thin.min.css", "/fileadmin/FontAwesome/css/light.min.css", "/fileadmin/FontAwesome/css/regular.min.css", "/fileadmin/FontAwesome/css/solid.min.css", "/fileadmin/FontAwesome/css/sharp-thin.min.css", "/fileadmin/FontAwesome/css/sharp-light.min.css", "/fileadmin/FontAwesome/css/sharp-regular.min.css", "/fileadmin/FontAwesome/css/sharp-solid.min.css", "/fileadmin/FontAwesome/css/duotone-thin.min.css", "/fileadmin/FontAwesome/css/duotone-light.min.css", "/fileadmin/FontAwesome/css/duotone-regular.min.css", "/fileadmin/FontAwesome/css/duotone.min.css", "/fileadmin/FontAwesome/css/sharp-duotone-thin.min.css", "/fileadmin/FontAwesome/css/sharp-duotone-light.min.css", "/fileadmin/FontAwesome/css/sharp-duotone-regular.min.css", "/fileadmin/FontAwesome/css/sharp-duotone-solid.min.css"]
