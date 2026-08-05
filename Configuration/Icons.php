@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgSpriteIconProvider;
+use TYPO3\CMS\Core\Log\LogManager;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
@@ -11,8 +12,7 @@ use TYPO3\CMS\Core\Utility\PathUtility;
 $icons = [];
 
 try {
-    $siteFinder = GeneralUtility::makeInstance(SiteFinder::class);
-    $sites = $siteFinder->getAllSites();
+    $sites = GeneralUtility::makeInstance(SiteFinder::class)->getAllSites();
 } catch (\Throwable) {
     return $icons;
 }
@@ -22,12 +22,10 @@ $spriteFiles = [];
 foreach ($sites as $site) {
     $settings = $site->getSettings();
 
-    if (!(bool)$settings->get('plugin.tx_rfrsjfontawesome.settings.useIconRegistration', false)) {
-        continue;
-    }
-
-    foreach ((array)$settings->get('plugin.tx_rfrsjfontawesome.settings.spriteFiles', []) as $file) {
-        $spriteFiles[$file] = $file;
+    if ($settings->get('plugin.tx_rfrsjfontawesome.settings.useIconRegistration', false)) {
+        foreach ((array)$settings->get('plugin.tx_rfrsjfontawesome.settings.spriteFiles', []) as $file) {
+            $spriteFiles[$file] = $file;
+        }
     }
 }
 
@@ -40,9 +38,12 @@ foreach (array_keys($spriteFiles) as $file) {
         $webPath = $file;
     }
 
-    $content = @file_get_contents($absolutePath);
+    $content = is_file($absolutePath) ? file_get_contents($absolutePath) : false;
 
     if ($content === false) {
+        GeneralUtility::makeInstance(LogManager::class)->getLogger('rfrsj_font_awesome')
+            ->warning('Font Awesome sprite file not found or unreadable, skipping', ['file' => $absolutePath]);
+
         continue;
     }
 
