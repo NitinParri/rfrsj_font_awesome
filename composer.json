@@ -1,7 +1,7 @@
 {
     "name": "refresj/rfrsj-font-awesome",
     "type": "typo3-cms-extension",
-    "version": "14.5.0",
+    "version": "14.5.1",
     "description": "Font Awesome for CKEditor - Integrates Font Awesome 7 Pro+ icons into the CKEditor 5 RTE! Font Awesome license required and not included.",
     "license": "GPL-2.0-or-later",
     "require": {
@@ -24,7 +24,7 @@
     "extra": {
         "typo3/cms": {
             "extension-key": "rfrsj_font_awesome",
-            "version": "14.5.0",
+            "version": "14.5.1",
             "Package": {
                 "providesPackages": {}
             }
