@@ -9,5 +9,3 @@ services:
 
     Refresj\RfrsjFontAwesome\Middleware\AddFontAwesomeCss:
         public: true
-        tags:
-            - name: middlewares
