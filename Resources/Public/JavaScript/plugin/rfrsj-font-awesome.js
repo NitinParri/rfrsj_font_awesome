@@ -20,7 +20,6 @@ export class RfrsjFontAwesome extends Plugin {
             button.set({
                 label: "Insert Font Awesome icon",
                 withText: false,
-                command: "ckeditor_fa",
                 icon: faIcon,
             });
 
@@ -80,10 +79,14 @@ export class RfrsjFontAwesome extends Plugin {
     }
 
     insertIcon(data) {
-        const classes = Array.isArray(data?.classes) ? data.classes.join(" ") : (data ?? "");
-        if (!String(classes).trim()) return;
+        const raw = Array.isArray(data?.classes) ? data.classes.join(" ") : String(data ?? "");
+        const classes = raw
+            .split(/\s+/)
+            .filter((name) => /^[a-z0-9-]+$/.test(name))
+            .join(" ");
+        if (!classes) return;
         const iTag = '<i class="' + classes + '">&nbsp;</i>';
-        const content = data.faList ? '<span class="fa-li">' + iTag + "</span> " : iTag + " ";
+        const content = data?.faList ? '<span class="fa-li">' + iTag + "</span> " : iTag + " ";
         const viewFragment = this.editor.data.processor.toView(content);
         const modelFragment = this.editor.data.toModel(viewFragment);
         this.editor.model.change(() => {
