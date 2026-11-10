@@ -26,7 +26,11 @@ TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 ri
 
 ## Installation
 
-Install the extension
+Install the extension via Composer:
+
+```bash
+composer require refresj/rfrsj-font-awesome
+```
 
 ## Configuration
 
@@ -43,7 +47,7 @@ sets:
 
 ### 2. Upload Font Awesome files
 
-1. Download [Font Awesome Pro+ for web](https://fontawesome.com/releases/7.2.0/pro-plus/web/download) (license required)
+1. Download [Font Awesome Pro+ for web](https://fontawesome.com/releases/7.3.1/pro-plus/web/download) (license required)
 2. Create a new folder `FontAwesome` in **_Media → fileadmin/_**
 3. Upload the downloaded `css` and `webfonts` folders to the newly created folder
 
