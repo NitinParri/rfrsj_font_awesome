@@ -3,10 +3,22 @@
     "type": "typo3-cms-extension",
     "version": "14.5.5",
     "description": "Font Awesome for CKEditor - Integrates Font Awesome 7 Pro+ icons into the CKEditor 5 RTE! Font Awesome license required and not included.",
+    "keywords": [
+        "TYPO3",
+        "CMS",
+        "extension",
+        "CKEditor",
+        "RTE",
+        "Font Awesome"
+    ],
+    "homepage": "https://github.com/NitinParri/rfrsj_font_awesome",
     "license": "GPL-2.0-or-later",
     "require": {
         "php": "^8.5",
-        "typo3/cms-core": "^14.3"
+        "typo3/cms-backend": "^14.3",
+        "typo3/cms-core": "^14.3",
+        "typo3/cms-frontend": "^14.3",
+        "typo3/cms-rte-ckeditor": "^14.3"
     },
     "authors": [
         {
@@ -14,6 +26,16 @@
             "role": "Developer",
             "email": "nitin@refresj.nl",
             "homepage": "https://refresj.nl"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/NitinParri/rfrsj_font_awesome/issues",
+        "source": "https://github.com/NitinParri/rfrsj_font_awesome"
+    },
+    "funding": [
+        {
+            "type": "other",
+            "url": "https://paypal.me/NitinParri"
         }
     ],
     "autoload": {
