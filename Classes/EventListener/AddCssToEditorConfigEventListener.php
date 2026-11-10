@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Refresj\RfrsjFontAwesome\EventListener;
 
 use TYPO3\CMS\Core\Attribute\AsEventListener;
-use TYPO3\CMS\Core\Site\Entity\SiteSettings;
+use TYPO3\CMS\Core\Exception\SiteNotFoundException;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
@@ -21,18 +21,17 @@ final class AddCssToEditorConfigEventListener
     public function __invoke(AfterPrepareConfigurationForEditorEvent $event): void
     {
         $data = $event->getData();
-        $pageId = (int)($data['effectivePid'] ?? $data['vanillaUid'] ?? 0);
+        $pageId = (int)($data['effectivePid'] ?? 0);
         if ($pageId === 0) {
             return;
         }
 
         try {
             $site = $this->siteFinder->getSiteByPageId($pageId);
-        } catch (\Exception) {
+        } catch (SiteNotFoundException) {
             return;
         }
 
-        /** @var SiteSettings $settings */
         $settings = $site->getSettings();
 
         $cssFiles = $settings->get('plugin.tx_rfrsjfontawesome.settings.cssFiles', []);
