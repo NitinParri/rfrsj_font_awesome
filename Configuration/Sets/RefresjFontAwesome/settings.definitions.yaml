@@ -14,7 +14,7 @@ settings:
         description: "Include all CSS files below in frontend. Note: the icons in CKEditor are based on Font Awesome 7.3.1 Pro Plus."
         category: FontAwesome.css
         type: bool
-        default: "0"
+        default: false
     plugin.tx_rfrsjfontawesome.settings.cssFiles:
         label: "CSS Files"
         description: "A list of the Font Awesome CSS files to include in both frontend and CKEditor backend"
@@ -26,7 +26,7 @@ settings:
         description: "Register all icons from the sprite files below as TYPO3 Icon API identifiers (e.g. for use with <core:icon> or IconFactory). This can register tens of thousands of icons, so it is disabled by default."
         category: FontAwesome.icons
         type: bool
-        default: "0"
+        default: false
     plugin.tx_rfrsjfontawesome.settings.spriteFiles:
         label: "Sprite Files"
         description: "A list of Font Awesome SVG sprite files to register in the TYPO3 Icon API. Only used when 'Register icons in TYPO3 Icon API' is enabled."
