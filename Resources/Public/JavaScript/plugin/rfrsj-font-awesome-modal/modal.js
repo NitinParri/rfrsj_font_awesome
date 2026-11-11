@@ -100,16 +100,16 @@ async function loadIconGroups() {
       icons += '<div class="col">' + '<a href="#" class="p-2" data-icon="' + ty + " fa-" + ids + '" data-name="' + ids + '">' + '<i class="' + ty + " fa-" + ids + '"></i>' + ids.split("-").join(" ") + "</a></div>";
     }
     iconSection.innerHTML = icons;
-    iconSection.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", onIconClick);
-    });
   }
 
   searchInput.addEventListener("input", applySearch);
+  iconSection.addEventListener("click", onIconClick);
 
   function onIconClick(e) {
+    const link = e.target.closest("a[data-icon]");
+    if (!link) return;
     e.preventDefault();
-    const icon = e.currentTarget.dataset["icon"];
+    const icon = link.dataset.icon;
     const selectedClass = icon ? [icon] : [];
     const faSize = document.querySelector('[name="faSize"]').value || null;
     const faAnimate = document.querySelector('[name="faAnimate"]').value || null;
@@ -133,6 +133,9 @@ async function loadIconGroups() {
       document.querySelector('[data-wt="fa-solid"]').click();
     })
     .catch(function (error) {
-      iconSection.innerHTML = '<div class="col-12 text-center text-danger p-3">Could not load the icon lists: ' + error.message + "</div>";
+      const message = document.createElement("div");
+      message.className = "col-12 text-center text-danger p-3";
+      message.textContent = "Could not load the icon lists: " + error.message;
+      iconSection.replaceChildren(message);
     });
 })();
