@@ -53,8 +53,4 @@
         flex: 0 0 auto;
         width: 12.5%;
     }
-    .row-cols-sm-10 > * {
-        flex: 0 0 auto;
-        width: 10%;
-    }
 }
