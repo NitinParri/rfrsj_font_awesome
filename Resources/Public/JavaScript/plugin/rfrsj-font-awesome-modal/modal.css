@@ -48,6 +48,11 @@
     white-space: nowrap;
 }
 
+.form-check-input,
+.form-check-label {
+    cursor: pointer;
+}
+
 @media (min-width: 576px) {
     .row-cols-sm-8 > * {
         flex: 0 0 auto;

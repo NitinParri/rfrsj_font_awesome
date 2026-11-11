@@ -55,6 +55,7 @@ async function loadIconGroups() {
       if (!hasWeight) {
         b.classList.remove("active", "btn-light");
         b.classList.add("btn-outline-secondary");
+        b.setAttribute("aria-pressed", "false");
       }
     });
     if (!hasWeight) activeWt = null;
@@ -65,9 +66,11 @@ async function loadIconGroups() {
       catBtns.forEach(function (b) {
         b.classList.remove("active", "btn-light");
         b.classList.add("btn-dark");
+        b.setAttribute("aria-pressed", "false");
       });
       btn.classList.add("active", "btn-light");
       btn.classList.remove("btn-dark");
+      btn.setAttribute("aria-pressed", "true");
       activeCat = btn.dataset.cat;
       syncWeightBtns();
 
@@ -86,9 +89,11 @@ async function loadIconGroups() {
       wtBtns.forEach(function (b) {
         b.classList.remove("active", "btn-light");
         b.classList.add("btn-outline-secondary");
+        b.setAttribute("aria-pressed", "false");
       });
       btn.classList.add("active", "btn-light");
       btn.classList.remove("btn-outline-secondary");
+      btn.setAttribute("aria-pressed", "true");
       activeWt = btn.dataset.wt;
       triggerIcons();
     });

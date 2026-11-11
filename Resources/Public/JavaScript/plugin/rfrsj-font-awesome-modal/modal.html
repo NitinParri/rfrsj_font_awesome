@@ -12,28 +12,28 @@
             <div class="row g-2 mb-1">
                 <div class="col-12">
                     <div class="d-flex flex-wrap gap-1 justify-content-center w-100" id="faCatGrp">
-                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="brands">Brands</button>
-                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="classic">Classic</button>
-                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="sharp">Sharp</button>
-                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="duotone">Duotone</button>
-                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="sharpduotone">Sharp Duotone</button>
+                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="brands" aria-pressed="false">Brands</button>
+                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="classic" aria-pressed="false">Classic</button>
+                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="sharp" aria-pressed="false">Sharp</button>
+                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="duotone" aria-pressed="false">Duotone</button>
+                        <button class="btn btn-sm btn-dark p-2 px-3 g-2 m-1 fw-bold" data-cat="sharpduotone" aria-pressed="false">Sharp Duotone</button>
                     </div>
                 </div>
             </div>
             <div class="row g-2 mb-2">
                 <div class="col-12">
                     <div class="d-flex flex-wrap gap-1 justify-content-center w-100" id="faWtGrp">
-                        <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-thin">Thin</button>
-                        <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-light">Light</button>
-                        <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-regular">Regular</button>
-                        <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-solid">Solid</button>
+                        <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-thin" aria-pressed="false">Thin</button>
+                        <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-light" aria-pressed="false">Light</button>
+                        <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-regular" aria-pressed="false">Regular</button>
+                        <button class="btn btn-sm btn-outline-secondary p-1 px-3 g-2 m-1" data-wt="fa-solid" aria-pressed="false">Solid</button>
                     </div>
                 </div>
             </div>
             <div class="row g-2 mb-3 mt-3">
                 <div class="input-group m-0 col-12 col-md d-flex">
-                    <span class="input-group-text small" id="search-label">Search:</span>
-                    <input class="form-control" type="search" name="search" aria-label="Search" aria-describedby="search-label" />
+                    <label class="input-group-text small" for="faSearch">Search:</label>
+                    <input class="form-control" type="search" id="faSearch" name="search" />
                 </div>
             </div>
             <div class="row mt-1 g-2">
@@ -96,14 +96,14 @@
                     </div>
                     <div class="form-group m-0 d-flex align-items-center">
                         <div class="form-check form-switch m-0">
-                            <input class="form-check-input" type="checkbox" id="faWidthAuto" name="faWidthAuto" style="cursor: pointer" />
-                            <label class="form-check-label small" for="faWidthAuto" style="cursor: pointer">Auto width</label>
+                            <input class="form-check-input" type="checkbox" id="faWidthAuto" name="faWidthAuto" />
+                            <label class="form-check-label small" for="faWidthAuto">Auto width</label>
                         </div>
                     </div>
                     <div class="form-group m-0 d-flex align-items-center">
                         <div class="form-check form-switch m-0">
-                            <input class="form-check-input" type="checkbox" id="faList" name="faList" style="cursor: pointer" />
-                            <label class="form-check-label small" for="faList" style="cursor: pointer">List item</label>
+                            <input class="form-check-input" type="checkbox" id="faList" name="faList" />
+                            <label class="form-check-label small" for="faList">List item</label>
                         </div>
                     </div>
                 </div>

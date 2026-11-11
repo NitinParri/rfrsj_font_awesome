@@ -71,7 +71,6 @@ export class RfrsjFontAwesome extends Plugin {
 
       const link = doc.createElement("link");
       link.rel = "stylesheet";
-      link.type = "text/css";
       link.href = href;
       head.appendChild(link);
       existingHrefs.add(href);
