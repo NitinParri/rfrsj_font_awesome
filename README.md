@@ -15,6 +15,7 @@ TYPO3 extension that integrates Font Awesome 7 Pro+ icons into the CKEditor 5 ri
 - Set extra options: Size, Animation, Rotation, Pull and/or Auto width
 - CSS files can be configured once via Site Settings and are automatically applied to CKEditor (and optionally to the frontend)
 - Optionally register Font Awesome icons as TYPO3 Icon API identifiers, based on your own SVG sprite files
+- Site Set labels and descriptions in Site Settings are translatable (English and Dutch included)
 - **Font Awesome is not included!** You have to purchase a license and upload the required files so you can include the CSS files by setting the correct paths in Site Settings.
 
 ## Requirements
@@ -60,7 +61,7 @@ After adding the Site Set, configure the Font Awesome CSS files via **_Sites →
 | `plugin.tx_rfrsjfontawesome.settings.loadCSS`  | Enable or disable frontend CSS inclusion       |
 | `plugin.tx_rfrsjfontawesome.settings.cssFiles` | List of Font Awesome CSS file paths to include |
 
-Both `EXT:` paths and absolute paths (e.g. `/fileadmin/...`) are supported:
+Both `EXT:` paths and absolute paths (e.g. `/fileadmin/...`) are supported. Only list the CSS files you actually use to keep the frontend light:
 
 ```yaml
 plugin.tx_rfrsjfontawesome.settings.cssFiles:
@@ -83,6 +84,8 @@ plugin.tx_rfrsjfontawesome.settings.cssFiles:
     - "/fileadmin/FontAwesome/css/sharp-duotone-regular.min.css"
     - "/fileadmin/FontAwesome/css/sharp-duotone-solid.min.css"
 ```
+
+The CSS files are always loaded in CKEditor. When `loadCSS` is enabled (it is disabled by default), they are also added to the frontend with the TYPO3 AssetCollector. These files are rendered after CSS that is added via the PageRenderer, such as `page.includeCSS`, so check the order if your own CSS overrides Font Awesome classes.
 
 ### 4. RTE configuration
 
@@ -131,7 +134,7 @@ Enable and configure this via **_Sites → Setup → Gear icon button (bottom ri
 This setting is **disabled by default**, since it can register tens of thousands of icon identifiers depending on how many sprite files are configured.
 
 ```yaml
-plugin.tx_rfrsjfontawesome.settings.useIconRegistration: 1
+plugin.tx_rfrsjfontawesome.settings.useIconRegistration: true
 plugin.tx_rfrsjfontawesome.settings.spriteFiles:
     - "/fileadmin/FontAwesome/sprites/solid.svg"
     - "/fileadmin/FontAwesome/sprites/regular.svg"
