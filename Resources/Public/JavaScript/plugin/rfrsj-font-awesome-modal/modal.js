@@ -133,6 +133,6 @@ async function loadIconGroups() {
       document.querySelector('[data-wt="fa-solid"]').click();
     })
     .catch(function (error) {
-      iconSection.innerHTML = '<div class="col-12 text-center text-danger p-3">Kon de icon-lijsten niet laden: ' + error.message + "</div>";
+      iconSection.innerHTML = '<div class="col-12 text-center text-danger p-3">Could not load the icon lists: ' + error.message + "</div>";
     });
 })();
