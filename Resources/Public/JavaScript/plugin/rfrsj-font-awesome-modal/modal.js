@@ -34,10 +34,10 @@ async function loadIconGroups() {
   }
 
   function applySearch() {
-    const val = searchInput.value.toLowerCase();
+    const val = searchInput.value.trim().toLowerCase().replace(/\s+/g, "-");
     iconSection.childNodes.forEach(function (item) {
-      const icon = item.childNodes[0] && item.childNodes[0].dataset["icon"];
-      item.style.display = !val || (icon && icon.indexOf(val) >= 0) ? "" : "none";
+      const name = item.firstElementChild?.dataset.name;
+      item.style.display = !val || (name && name.indexOf(val) >= 0) ? "" : "none";
     });
   }
 
@@ -97,7 +97,7 @@ async function loadIconGroups() {
   function faRender(fas, ty) {
     let icons = "";
     for (const ids of fas) {
-      icons += '<div class="col">' + '<a href="#" class="p-2" onclick="return false;" data-icon="' + ty + " fa-" + ids + '">' + '<i class="' + ty + " fa-" + ids + '"></i>' + ids.split("-").join(" ") + "</a></div>";
+      icons += '<div class="col">' + '<a href="#" class="p-2" onclick="return false;" data-icon="' + ty + " fa-" + ids + '" data-name="' + ids + '">' + '<i class="' + ty + " fa-" + ids + '"></i>' + ids.split("-").join(" ") + "</a></div>";
     }
     iconSection.innerHTML = icons;
     iconSection.querySelectorAll("a").forEach(function (link) {
@@ -105,7 +105,7 @@ async function loadIconGroups() {
     });
   }
 
-  searchInput.addEventListener("keyup", applySearch);
+  searchInput.addEventListener("input", applySearch);
 
   function klick(e) {
     const icon = e.currentTarget.dataset["icon"];
