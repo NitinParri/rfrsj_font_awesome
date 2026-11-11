@@ -11,9 +11,13 @@ use TYPO3\CMS\Core\Utility\PathUtility;
 
 $icons = [];
 
+$logger = GeneralUtility::makeInstance(LogManager::class)->getLogger('rfrsj_font_awesome');
+
 try {
     $sites = GeneralUtility::makeInstance(SiteFinder::class)->getAllSites();
-} catch (\Throwable) {
+} catch (\Throwable $exception) {
+    $logger->warning('Could not load sites, no Font Awesome icons registered', ['exception' => $exception]);
+
     return $icons;
 }
 
@@ -24,7 +28,9 @@ foreach ($sites as $site) {
 
     if ($settings->get('plugin.tx_rfrsjfontawesome.settings.useIconRegistration', false)) {
         foreach ((array)$settings->get('plugin.tx_rfrsjfontawesome.settings.spriteFiles', []) as $file) {
-            $spriteFiles[$file] = $file;
+            if (is_string($file) && $file !== '') {
+                $spriteFiles[$file] = $file;
+            }
         }
     }
 }
@@ -32,24 +38,28 @@ foreach ($sites as $site) {
 foreach (array_keys($spriteFiles) as $file) {
     if (PathUtility::isExtensionPath($file)) {
         $absolutePath = GeneralUtility::getFileAbsFileName($file);
-        $webPath = PathUtility::getAbsoluteWebPath($absolutePath);
     } else {
         $absolutePath = rtrim(Environment::getPublicPath(), '/') . '/' . ltrim($file, '/');
-        $webPath = $file;
     }
 
     $content = is_file($absolutePath) ? file_get_contents($absolutePath) : false;
 
     if ($content === false) {
-        GeneralUtility::makeInstance(LogManager::class)->getLogger('rfrsj_font_awesome')
-            ->warning('Font Awesome sprite file not found or unreadable, skipping', ['file' => $absolutePath]);
+        $logger->warning('Font Awesome sprite file not found or unreadable, skipping', ['file' => $file, 'path' => $absolutePath]);
+
+        continue;
+    }
+
+    preg_match_all('/<symbol[^>]*\sid="([^"]+)"/', $content, $matches);
+
+    if ($matches[1] === []) {
+        $logger->warning('Font Awesome sprite file contains no <symbol id="..."> elements, skipping', ['file' => $file, 'path' => $absolutePath]);
 
         continue;
     }
 
     $style = pathinfo($file, PATHINFO_FILENAME);
-
-    preg_match_all('/<symbol[^>]*\sid="([^"]+)"/', $content, $matches);
+    $webPath = PathUtility::getAbsoluteWebPath($absolutePath);
 
     foreach ($matches[1] as $name) {
         $icons['fa-' . $style . '-' . $name] = [
