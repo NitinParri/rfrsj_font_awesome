@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="nl">
+  <file id="locallang_modal">
+    <unit id="button.label">
+      <segment state="final">
+        <source>Insert Font Awesome icon</source>
+        <target>Font Awesome icoon invoegen</target>
+      </segment>
+    </unit>
+    <unit id="modal.title">
+      <segment state="final">
+        <source>Font Awesome icons</source>
+        <target>Font Awesome iconen</target>
+      </segment>
+    </unit>
+    <unit id="search.label">
+      <segment state="final">
+        <source>Search:</source>
+        <target>Zoeken:</target>
+      </segment>
+    </unit>
+    <unit id="options.label">
+      <segment state="final">
+        <source>Set options:</source>
+        <target>Opties:</target>
+      </segment>
+    </unit>
+    <unit id="options.hint">
+      <segment state="final">
+        <source>(before selecting icon)</source>
+        <target>(vóór kiezen van icoon)</target>
+      </segment>
+    </unit>
+    <unit id="option.size">
+      <segment state="final">
+        <source>Size...</source>
+        <target>Grootte...</target>
+      </segment>
+    </unit>
+    <unit id="option.animate">
+      <segment state="final">
+        <source>Animate...</source>
+        <target>Animatie...</target>
+      </segment>
+    </unit>
+    <unit id="option.rotate">
+      <segment state="final">
+        <source>Rotate...</source>
+        <target>Roteren...</target>
+      </segment>
+    </unit>
+    <unit id="option.pull">
+      <segment state="final">
+        <source>Pull...</source>
+        <target>Uitlijning...</target>
+      </segment>
+    </unit>
+    <unit id="rotate.flipHorizontal">
+      <segment state="final">
+        <source>Flip horizontal</source>
+        <target>Horizontaal</target>
+      </segment>
+    </unit>
+    <unit id="rotate.flipVertical">
+      <segment state="final">
+        <source>Flip vertical</source>
+        <target>Verticaal</target>
+      </segment>
+    </unit>
+    <unit id="rotate.flipBoth">
+      <segment state="final">
+        <source>Flip both</source>
+        <target>Beide</target>
+      </segment>
+    </unit>
+    <unit id="pull.start">
+      <segment state="final">
+        <source>Start</source>
+        <target>Begin</target>
+      </segment>
+    </unit>
+    <unit id="pull.end">
+      <segment state="final">
+        <source>End</source>
+        <target>Einde</target>
+      </segment>
+    </unit>
+    <unit id="option.widthAuto">
+      <segment state="final">
+        <source>Auto width</source>
+        <target>Auto breedte</target>
+      </segment>
+    </unit>
+    <unit id="option.list">
+      <segment state="final">
+        <source>List item</source>
+        <target>Lijstitem</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

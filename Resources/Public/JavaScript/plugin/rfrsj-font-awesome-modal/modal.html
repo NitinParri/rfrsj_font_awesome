@@ -32,7 +32,7 @@
             </div>
             <div class="row g-2 mb-3 mt-3">
                 <div class="input-group m-0 col-12 col-md d-flex">
-                    <label class="input-group-text small" for="faSearch">Search:</label>
+                    <label class="input-group-text small" for="faSearch" data-label="search.label">Search:</label>
                     <input class="form-control" type="search" id="faSearch" name="search" />
                 </div>
             </div>
@@ -40,14 +40,14 @@
                 <div class="col-12 d-flex flex-wrap gap-3 align-items-center justify-content-center w-100">
                     <div class="form-group">
                         <span class="small">
-                            Set options:
+                            <span data-label="options.label">Set options:</span>
                             <br />
-                            <sup>(before selecting icon)</sup>
+                            <sup data-label="options.hint">(before selecting icon)</sup>
                         </span>
                     </div>
                     <div class="form-group m-1">
                         <select class="form-select form-select-sm" id="faSize" name="faSize">
-                            <option value="">Size...</option>
+                            <option value="" data-label="option.size">Size...</option>
                             <option value="fa-2xs">2xs</option>
                             <option value="fa-xs">xs</option>
                             <option value="fa-sm">sm</option>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="form-group m-0">
                         <select class="form-select form-select-sm" id="faAnimate" name="faAnimate">
-                            <option value="">Animate...</option>
+                            <option value="" data-label="option.animate">Animate...</option>
                             <option value="fa-beat">Beat</option>
                             <option value="fa-fade">Fade</option>
                             <option value="fa-beat-fade">Beat Fade</option>
@@ -78,32 +78,32 @@
                     </div>
                     <div class="form-group m-0">
                         <select class="form-select form-select-sm" id="faRotate" name="faRotate">
-                            <option value="">Rotate...</option>
+                            <option value="" data-label="option.rotate">Rotate...</option>
                             <option value="fa-rotate-90">90°</option>
                             <option value="fa-rotate-180">180°</option>
                             <option value="fa-rotate-270">270°</option>
-                            <option value="fa-flip-horizontal">Flip horizontal</option>
-                            <option value="fa-flip-vertical">Flip vertical</option>
-                            <option value="fa-flip-both">Flip both</option>
+                            <option value="fa-flip-horizontal" data-label="rotate.flipHorizontal">Flip horizontal</option>
+                            <option value="fa-flip-vertical" data-label="rotate.flipVertical">Flip vertical</option>
+                            <option value="fa-flip-both" data-label="rotate.flipBoth">Flip both</option>
                         </select>
                     </div>
                     <div class="form-group m-0">
                         <select class="form-select form-select-sm" id="faPull" name="faPull">
-                            <option value="">Pull...</option>
-                            <option value="fa-pull-start">Start</option>
-                            <option value="fa-pull-end">End</option>
+                            <option value="" data-label="option.pull">Pull...</option>
+                            <option value="fa-pull-start" data-label="pull.start">Start</option>
+                            <option value="fa-pull-end" data-label="pull.end">End</option>
                         </select>
                     </div>
                     <div class="form-group m-0 d-flex align-items-center">
                         <div class="form-check form-switch m-0">
                             <input class="form-check-input" type="checkbox" id="faWidthAuto" name="faWidthAuto" />
-                            <label class="form-check-label small" for="faWidthAuto">Auto width</label>
+                            <label class="form-check-label small" for="faWidthAuto" data-label="option.widthAuto">Auto width</label>
                         </div>
                     </div>
                     <div class="form-group m-0 d-flex align-items-center">
                         <div class="form-check form-switch m-0">
                             <input class="form-check-input" type="checkbox" id="faList" name="faList" />
-                            <label class="form-check-label small" for="faList">List item</label>
+                            <label class="form-check-label small" for="faList" data-label="option.list">List item</label>
                         </div>
                     </div>
                 </div>

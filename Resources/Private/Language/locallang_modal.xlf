@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="locallang_modal">
+    <unit id="button.label">
+      <segment>
+        <source>Insert Font Awesome icon</source>
+      </segment>
+    </unit>
+    <unit id="modal.title">
+      <segment>
+        <source>Font Awesome icons</source>
+      </segment>
+    </unit>
+    <unit id="search.label">
+      <segment>
+        <source>Search:</source>
+      </segment>
+    </unit>
+    <unit id="options.label">
+      <segment>
+        <source>Set options:</source>
+      </segment>
+    </unit>
+    <unit id="options.hint">
+      <segment>
+        <source>(before selecting icon)</source>
+      </segment>
+    </unit>
+    <unit id="option.size">
+      <segment>
+        <source>Size...</source>
+      </segment>
+    </unit>
+    <unit id="option.animate">
+      <segment>
+        <source>Animate...</source>
+      </segment>
+    </unit>
+    <unit id="option.rotate">
+      <segment>
+        <source>Rotate...</source>
+      </segment>
+    </unit>
+    <unit id="option.pull">
+      <segment>
+        <source>Pull...</source>
+      </segment>
+    </unit>
+    <unit id="rotate.flipHorizontal">
+      <segment>
+        <source>Flip horizontal</source>
+      </segment>
+    </unit>
+    <unit id="rotate.flipVertical">
+      <segment>
+        <source>Flip vertical</source>
+      </segment>
+    </unit>
+    <unit id="rotate.flipBoth">
+      <segment>
+        <source>Flip both</source>
+      </segment>
+    </unit>
+    <unit id="pull.start">
+      <segment>
+        <source>Start</source>
+      </segment>
+    </unit>
+    <unit id="pull.end">
+      <segment>
+        <source>End</source>
+      </segment>
+    </unit>
+    <unit id="option.widthAuto">
+      <segment>
+        <source>Auto width</source>
+      </segment>
+    </unit>
+    <unit id="option.list">
+      <segment>
+        <source>List item</source>
+      </segment>
+    </unit>
+  </file>
+</xliff>
