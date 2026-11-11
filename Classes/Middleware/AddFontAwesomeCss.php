@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Page\AssetCollector;
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
@@ -16,7 +16,7 @@ use TYPO3\CMS\Core\Utility\PathUtility;
 final class AddFontAwesomeCss implements MiddlewareInterface
 {
     public function __construct(
-        private readonly PageRenderer $pageRenderer,
+        private readonly AssetCollector $assetCollector,
     ) {}
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
@@ -27,14 +27,20 @@ final class AddFontAwesomeCss implements MiddlewareInterface
             $settings = $site->getSettings();
 
             if ((bool)$settings->get('plugin.tx_rfrsjfontawesome.settings.loadCSS', false)) {
-                foreach ((array)$settings->get('plugin.tx_rfrsjfontawesome.settings.cssFiles', []) as $file) {
-                    if (PathUtility::isExtensionPath($file)) {
-                        $file = PathUtility::getAbsoluteWebPath(
-                            GeneralUtility::getFileAbsFileName($file)
-                        );
+                foreach ((array)$settings->get('plugin.tx_rfrsjfontawesome.settings.cssFiles', []) as $key => $file) {
+                    if (!is_string($file) || $file === '') {
+                        continue;
                     }
 
-                    $this->pageRenderer->addCssFile($file);
+                    if (PathUtility::isExtensionPath($file)) {
+                        if (!is_file(GeneralUtility::getFileAbsFileName($file))) {
+                            continue;
+                        }
+                    } elseif (!str_starts_with($file, 'URI:') && preg_match('#^(https?:)?//#i', $file) !== 1) {
+                        $file = 'URI:' . $file;
+                    }
+
+                    $this->assetCollector->addStyleSheet('rfrsj-font-awesome-' . $key, $file, [], ['csp' => true]);
                 }
             }
         }
