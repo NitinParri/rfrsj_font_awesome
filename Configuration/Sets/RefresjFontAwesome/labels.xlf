@@ -28,7 +28,7 @@
     </unit>
     <unit id="settings.description.plugin.tx_rfrsjfontawesome.settings.loadCSS">
       <segment>
-        <source>Also include the CSS files below in the frontend. They are always loaded in CKEditor, regardless of this setting. Note: the icons in CKEditor are based on Font Awesome 7.3.1 Pro Plus.</source>
+        <source>Also include the CSS files below in the frontend. They are always loaded in CKEditor, regardless of this setting. Note: the icons in CKEditor are based on Font Awesome 7.3.1 Pro+.</source>
       </segment>
     </unit>
     <unit id="settings.plugin.tx_rfrsjfontawesome.settings.cssFiles">
