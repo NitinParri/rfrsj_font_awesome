@@ -97,17 +97,18 @@ async function loadIconGroups() {
   function faRender(fas, ty) {
     let icons = "";
     for (const ids of fas) {
-      icons += '<div class="col">' + '<a href="#" class="p-2" onclick="return false;" data-icon="' + ty + " fa-" + ids + '" data-name="' + ids + '">' + '<i class="' + ty + " fa-" + ids + '"></i>' + ids.split("-").join(" ") + "</a></div>";
+      icons += '<div class="col">' + '<a href="#" class="p-2" data-icon="' + ty + " fa-" + ids + '" data-name="' + ids + '">' + '<i class="' + ty + " fa-" + ids + '"></i>' + ids.split("-").join(" ") + "</a></div>";
     }
     iconSection.innerHTML = icons;
     iconSection.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", klick);
+      link.addEventListener("click", onIconClick);
     });
   }
 
   searchInput.addEventListener("input", applySearch);
 
-  function klick(e) {
+  function onIconClick(e) {
+    e.preventDefault();
     const icon = e.currentTarget.dataset["icon"];
     const selectedClass = icon ? [icon] : [];
     const faSize = document.querySelector('[name="faSize"]').value || null;
