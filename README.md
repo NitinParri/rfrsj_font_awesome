@@ -160,6 +160,8 @@ Each sprite file must expose its icons via `<symbol id="...">` elements, which i
 <core:icon identifier="fa-brands-github" />
 ```
 
+Icons are registered when the TYPO3 cache is built. After you enable this setting, or add, change or remove a sprite file, flush all caches (for example with `vendor/bin/typo3 cache:flush`). Otherwise your changes are not picked up yet.
+
 ## How it works
 
 ### Icon insertion
@@ -187,6 +189,13 @@ You can also make a list and replace the default bullets or numbers with icons:
 ### No icons showing
 
 If no icons are showing, you didn't add a correct path to the CSS file(s) in Site Settings.
+
+### Icon API identifiers not found
+
+If an identifier such as `fa-solid-star` is not found after you enabled the Icon API registration:
+
+1. Flush all caches, for example with `vendor/bin/typo3 cache:flush`
+2. Check the sprite file paths in Site Settings. Sprite files that are missing or unreadable are skipped and logged as a warning by the `rfrsj_font_awesome` logger
 
 ### Extra options not inserted
 
