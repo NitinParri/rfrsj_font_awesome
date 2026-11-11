@@ -41,14 +41,24 @@ final class AddCssToEditorConfigEventListener
 
         $cssMap = [];
         foreach ($cssFiles as $key => $file) {
-            // EXT: paden omzetten naar relatieve webpaden
+            if (!is_string($file) || $file === '') {
+                continue;
+            }
+
             if (PathUtility::isExtensionPath($file)) {
-                $file = PathUtility::getAbsoluteWebPath(
-                    GeneralUtility::getFileAbsFileName($file)
-                );
+                $absolutePath = GeneralUtility::getFileAbsFileName($file);
+                if ($absolutePath === '') {
+                    continue;
+                }
+
+                $file = PathUtility::getAbsoluteWebPath($absolutePath);
             }
 
             $cssMap[is_string($key) ? $key : 'file_' . $key] = $file;
+        }
+
+        if ($cssMap === []) {
+            return;
         }
 
         $config = $event->getConfiguration();
