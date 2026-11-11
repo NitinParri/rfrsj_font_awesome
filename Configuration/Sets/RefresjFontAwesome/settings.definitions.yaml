@@ -1,35 +1,70 @@
 categories:
   FontAwesome:
-    label: 'Refresj Font Awesome'
+    label: 'rfrsj_font_awesome.sets.refresj_font_awesome:categories.FontAwesome'
   FontAwesome.css:
-    label: 'CSS'
+    label: 'rfrsj_font_awesome.sets.refresj_font_awesome:categories.FontAwesome.css'
     parent: FontAwesome
   FontAwesome.icons:
-    label: 'TYPO3 Icon API'
+    label: 'rfrsj_font_awesome.sets.refresj_font_awesome:categories.FontAwesome.icons'
     parent: FontAwesome
 
 settings:
   plugin.tx_rfrsjfontawesome.settings.loadCSS:
-    label: 'Load CSS in frontend'
-    description: 'Include all CSS files below in frontend. Note: the icons in CKEditor are based on Font Awesome 7.3.1 Pro Plus.'
+    label: 'rfrsj_font_awesome.sets.refresj_font_awesome:settings.plugin.tx_rfrsjfontawesome.settings.loadCSS'
+    description: 'rfrsj_font_awesome.sets.refresj_font_awesome:settings.description.plugin.tx_rfrsjfontawesome.settings.loadCSS'
     category: FontAwesome.css
     type: bool
     default: false
   plugin.tx_rfrsjfontawesome.settings.cssFiles:
-    label: 'CSS Files'
-    description: 'A list of the Font Awesome CSS files to include in both frontend and CKEditor backend'
+    label: 'rfrsj_font_awesome.sets.refresj_font_awesome:settings.plugin.tx_rfrsjfontawesome.settings.cssFiles'
+    description: 'rfrsj_font_awesome.sets.refresj_font_awesome:settings.description.plugin.tx_rfrsjfontawesome.settings.cssFiles'
     category: FontAwesome.css
     type: stringlist
-    default: ['/fileadmin/FontAwesome/css/fontawesome.min.css', '/fileadmin/FontAwesome/css/brands.min.css', '/fileadmin/FontAwesome/css/thin.min.css', '/fileadmin/FontAwesome/css/light.min.css', '/fileadmin/FontAwesome/css/regular.min.css', '/fileadmin/FontAwesome/css/solid.min.css', '/fileadmin/FontAwesome/css/sharp-thin.min.css', '/fileadmin/FontAwesome/css/sharp-light.min.css', '/fileadmin/FontAwesome/css/sharp-regular.min.css', '/fileadmin/FontAwesome/css/sharp-solid.min.css', '/fileadmin/FontAwesome/css/duotone-thin.min.css', '/fileadmin/FontAwesome/css/duotone-light.min.css', '/fileadmin/FontAwesome/css/duotone-regular.min.css', '/fileadmin/FontAwesome/css/duotone.min.css', '/fileadmin/FontAwesome/css/sharp-duotone-thin.min.css', '/fileadmin/FontAwesome/css/sharp-duotone-light.min.css', '/fileadmin/FontAwesome/css/sharp-duotone-regular.min.css', '/fileadmin/FontAwesome/css/sharp-duotone-solid.min.css']
+    default:
+      - '/fileadmin/FontAwesome/css/fontawesome.min.css'
+      - '/fileadmin/FontAwesome/css/brands.min.css'
+      - '/fileadmin/FontAwesome/css/thin.min.css'
+      - '/fileadmin/FontAwesome/css/light.min.css'
+      - '/fileadmin/FontAwesome/css/regular.min.css'
+      - '/fileadmin/FontAwesome/css/solid.min.css'
+      - '/fileadmin/FontAwesome/css/sharp-thin.min.css'
+      - '/fileadmin/FontAwesome/css/sharp-light.min.css'
+      - '/fileadmin/FontAwesome/css/sharp-regular.min.css'
+      - '/fileadmin/FontAwesome/css/sharp-solid.min.css'
+      - '/fileadmin/FontAwesome/css/duotone-thin.min.css'
+      - '/fileadmin/FontAwesome/css/duotone-light.min.css'
+      - '/fileadmin/FontAwesome/css/duotone-regular.min.css'
+      - '/fileadmin/FontAwesome/css/duotone.min.css'
+      - '/fileadmin/FontAwesome/css/sharp-duotone-thin.min.css'
+      - '/fileadmin/FontAwesome/css/sharp-duotone-light.min.css'
+      - '/fileadmin/FontAwesome/css/sharp-duotone-regular.min.css'
+      - '/fileadmin/FontAwesome/css/sharp-duotone-solid.min.css'
   plugin.tx_rfrsjfontawesome.settings.useIconRegistration:
-    label: 'Register icons in TYPO3 Icon API'
-    description: 'Register all icons from the sprite files below as TYPO3 Icon API identifiers (e.g. for use with <core:icon> or IconFactory). This can register tens of thousands of icons, so it is disabled by default.'
+    label: 'rfrsj_font_awesome.sets.refresj_font_awesome:settings.plugin.tx_rfrsjfontawesome.settings.useIconRegistration'
+    description: 'rfrsj_font_awesome.sets.refresj_font_awesome:settings.description.plugin.tx_rfrsjfontawesome.settings.useIconRegistration'
     category: FontAwesome.icons
     type: bool
     default: false
   plugin.tx_rfrsjfontawesome.settings.spriteFiles:
-    label: 'Sprite Files'
-    description: "A list of Font Awesome SVG sprite files to register in the TYPO3 Icon API. Only used when 'Register icons in TYPO3 Icon API' is enabled."
+    label: 'rfrsj_font_awesome.sets.refresj_font_awesome:settings.plugin.tx_rfrsjfontawesome.settings.spriteFiles'
+    description: 'rfrsj_font_awesome.sets.refresj_font_awesome:settings.description.plugin.tx_rfrsjfontawesome.settings.spriteFiles'
     category: FontAwesome.icons
     type: stringlist
-    default: ['/fileadmin/FontAwesome/sprites/solid.svg', '/fileadmin/FontAwesome/sprites/regular.svg', '/fileadmin/FontAwesome/sprites/light.svg', '/fileadmin/FontAwesome/sprites/thin.svg', '/fileadmin/FontAwesome/sprites/duotone.svg', '/fileadmin/FontAwesome/sprites/duotone-regular.svg', '/fileadmin/FontAwesome/sprites/duotone-light.svg', '/fileadmin/FontAwesome/sprites/duotone-thin.svg', '/fileadmin/FontAwesome/sprites/sharp-solid.svg', '/fileadmin/FontAwesome/sprites/sharp-regular.svg', '/fileadmin/FontAwesome/sprites/sharp-light.svg', '/fileadmin/FontAwesome/sprites/sharp-thin.svg', '/fileadmin/FontAwesome/sprites/sharp-duotone-solid.svg', '/fileadmin/FontAwesome/sprites/sharp-duotone-regular.svg', '/fileadmin/FontAwesome/sprites/sharp-duotone-light.svg', '/fileadmin/FontAwesome/sprites/sharp-duotone-thin.svg', '/fileadmin/FontAwesome/sprites/brands.svg']
+    default:
+      - '/fileadmin/FontAwesome/sprites/solid.svg'
+      - '/fileadmin/FontAwesome/sprites/regular.svg'
+      - '/fileadmin/FontAwesome/sprites/light.svg'
+      - '/fileadmin/FontAwesome/sprites/thin.svg'
+      - '/fileadmin/FontAwesome/sprites/duotone.svg'
+      - '/fileadmin/FontAwesome/sprites/duotone-regular.svg'
+      - '/fileadmin/FontAwesome/sprites/duotone-light.svg'
+      - '/fileadmin/FontAwesome/sprites/duotone-thin.svg'
+      - '/fileadmin/FontAwesome/sprites/sharp-solid.svg'
+      - '/fileadmin/FontAwesome/sprites/sharp-regular.svg'
+      - '/fileadmin/FontAwesome/sprites/sharp-light.svg'
+      - '/fileadmin/FontAwesome/sprites/sharp-thin.svg'
+      - '/fileadmin/FontAwesome/sprites/sharp-duotone-solid.svg'
+      - '/fileadmin/FontAwesome/sprites/sharp-duotone-regular.svg'
+      - '/fileadmin/FontAwesome/sprites/sharp-duotone-light.svg'
+      - '/fileadmin/FontAwesome/sprites/sharp-duotone-thin.svg'
+      - '/fileadmin/FontAwesome/sprites/brands.svg'

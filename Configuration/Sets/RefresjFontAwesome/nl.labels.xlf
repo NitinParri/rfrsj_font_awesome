@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="nl">
+  <file id="labels">
+    <unit id="label">
+      <segment state="final">
+        <source>Font Awesome for CKEditor</source>
+        <target>Font Awesome voor CKEditor</target>
+      </segment>
+    </unit>
+    <unit id="categories.FontAwesome">
+      <segment state="final">
+        <source>Refresj Font Awesome</source>
+        <target>Refresj Font Awesome</target>
+      </segment>
+    </unit>
+    <unit id="categories.FontAwesome.css">
+      <segment state="final">
+        <source>CSS</source>
+        <target>CSS</target>
+      </segment>
+    </unit>
+    <unit id="categories.FontAwesome.icons">
+      <segment state="final">
+        <source>TYPO3 Icon API</source>
+        <target>TYPO3 Icon API</target>
+      </segment>
+    </unit>
+    <unit id="settings.plugin.tx_rfrsjfontawesome.settings.loadCSS">
+      <segment state="final">
+        <source>Load CSS in frontend</source>
+        <target>CSS laden in de frontend</target>
+      </segment>
+    </unit>
+    <unit id="settings.description.plugin.tx_rfrsjfontawesome.settings.loadCSS">
+      <segment state="final">
+        <source>Also include the CSS files below in the frontend. They are always loaded in CKEditor, regardless of this setting. Note: the icons in CKEditor are based on Font Awesome 7.3.1 Pro Plus.</source>
+        <target>Neem de onderstaande CSS-bestanden ook op in de frontend. In CKEditor worden ze altijd geladen, ongeacht deze instelling. Let op: de iconen in CKEditor zijn gebaseerd op Font Awesome 7.3.1 Pro Plus.</target>
+      </segment>
+    </unit>
+    <unit id="settings.plugin.tx_rfrsjfontawesome.settings.cssFiles">
+      <segment state="final">
+        <source>CSS Files</source>
+        <target>CSS-bestanden</target>
+      </segment>
+    </unit>
+    <unit id="settings.description.plugin.tx_rfrsjfontawesome.settings.cssFiles">
+      <segment state="final">
+        <source>A list of the Font Awesome CSS files to use in CKEditor and, when **Load CSS in frontend** is enabled, in the frontend. Both `EXT:` paths and absolute paths (for example `/fileadmin/...`) are supported. Tip: remove the styles you do not use to keep the frontend light.</source>
+        <target>Een lijst met Font Awesome CSS-bestanden voor CKEditor en, als **CSS laden in de frontend** aan staat, ook voor de frontend. Zowel `EXT:`-paden als absolute paden (bijvoorbeeld `/fileadmin/...`) worden ondersteund. Tip: verwijder stijlen die je niet gebruikt, zodat de frontend licht blijft.</target>
+      </segment>
+    </unit>
+    <unit id="settings.plugin.tx_rfrsjfontawesome.settings.useIconRegistration">
+      <segment state="final">
+        <source>Register icons in TYPO3 Icon API</source>
+        <target>Iconen registreren in de TYPO3 Icon API</target>
+      </segment>
+    </unit>
+    <unit id="settings.description.plugin.tx_rfrsjfontawesome.settings.useIconRegistration">
+      <segment state="final">
+        <source>Register all icons from the sprite files below as TYPO3 Icon API identifiers (for example for use with `&lt;core:icon&gt;` or `IconFactory`). This can register tens of thousands of icons, so it is disabled by default. Flush all caches after changing this setting.</source>
+        <target>Registreer alle iconen uit de onderstaande sprite-bestanden als TYPO3 Icon API-identifiers (bijvoorbeeld voor gebruik met `&lt;core:icon&gt;` of `IconFactory`). Dit kunnen tienduizenden iconen zijn, daarom staat deze instelling standaard uit. Leeg alle caches na het wijzigen van deze instelling.</target>
+      </segment>
+    </unit>
+    <unit id="settings.plugin.tx_rfrsjfontawesome.settings.spriteFiles">
+      <segment state="final">
+        <source>Sprite Files</source>
+        <target>Sprite-bestanden</target>
+      </segment>
+    </unit>
+    <unit id="settings.description.plugin.tx_rfrsjfontawesome.settings.spriteFiles">
+      <segment state="final">
+        <source>A list of Font Awesome SVG sprite files to register in the TYPO3 Icon API. Only used when **Register icons in TYPO3 Icon API** is enabled. Only list the sprite files you actually use. Flush all caches after changing this list.</source>
+        <target>Een lijst met Font Awesome SVG-sprite-bestanden om te registreren in de TYPO3 Icon API. Wordt alleen gebruikt als **Iconen registreren in de TYPO3 Icon API** aan staat. Neem alleen de sprite-bestanden op die je echt gebruikt. Leeg alle caches na het wijzigen van deze lijst.</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>
